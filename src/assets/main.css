@@ -1,0 +1,43 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+  font-weight: normal;
+  min-height: 100vh;
+}
+
+.rnm-card{
+  width: 300px!important;
+
+}
+
+.rnm-card img {
+  min-width: 300px!important;
+  min-height: 300px!important;
+}
+
+.status-overlay {
+  right: 10px;
+  top: 10px;
+  text-align: center;
+  width: 90px;
+  font-size: 1rem;
+  font-weight:700;
+}
+
+.episodes-overlay {
+  right: 10px;
+  bottom: 10px;
+  text-align: center;
+  width: 120px;
+  font-size: 0.8rem;
+  font-weight:700;
+  padding:15px;
+  border: 2px solid #1d232a
+}
+
+.char-name {
+  font-size: 1rem!important;
+}

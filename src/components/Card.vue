@@ -1,6 +1,9 @@
 <script setup>
+import { onMounted } from 'vue';
 const { character } = defineProps(['character'])
-
+onMounted(() => {
+    console.log('Updated Component');
+})
 </script>
 <template>
     <div class="card rnm-card w-96 bg-base-100 shadow-xl border-2 border-white m-5">
@@ -12,7 +15,7 @@ const { character } = defineProps(['character'])
                 </span>
             </div>
             <figure>
-                <img class="rounded-lg" :src='character.image' :alt="character.name" />
+                <img class="rounded-lg p-2 card-image" :src='character.image' :alt="character.name" />
             </figure>
             <div class="absolute episodes-overlay badge badge-primary">
                 <span class="status-text flex items-center">

@@ -41,3 +41,7 @@
 .char-name {
   font-size: 1rem!important;
 }
+
+.card-image {
+  border-radius: 1rem;
+}

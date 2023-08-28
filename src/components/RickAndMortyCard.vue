@@ -50,23 +50,40 @@ function updatePageData(response) {
         </button>
     </div>
     <div class="w-full px-2 pb-12">
-        <div class="flex flex-row flex-wrap mx-auto items-center justify-center">
-
-            <Card v-for="(character, index) in characters" :key="index" :character="character">
-                <template v-slot:species>
-                    {{ character.species }}
-                </template>
-                <template v-slot:gender>
-                    {{ character.gender }}
-                </template>
-                <template v-slot:origin>
-                    {{ character.origin.name }}
-                </template>
-                <template v-slot:name>
-                    {{ character.name }}
-                </template>
-            </Card>
-
+        <div>
+            <ul>
+                <TransitionGroup class="flex flex-row flex-wrap mx-auto items-center justify-center" name="list" tag="ul">
+                    <li v-for="(character, index) in characters" :key="index">
+                        <Card :character="character">
+                            <template #species>
+                                {{ character.species }}
+                            </template>
+                            <template #gender>
+                                {{ character.gender }}
+                            </template>
+                            <template #origin>
+                                {{ character.origin.name }}
+                            </template>
+                            <template #name>
+                                {{ character.name }}
+                            </template>
+                        </Card>
+                    </li>
+                </TransitionGroup>
+            </ul>
         </div>
     </div>
 </template> 
+
+<style scoped>
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+</style>

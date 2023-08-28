@@ -11,7 +11,11 @@ import RickAndMortyCard from './components/RickAndMortyCard.vue'
         </template>
         <template #fallback>
           <div class="prose">
-            <h1>Loading</h1>
+            <div class="flex flex-row item-center justify-center">
+              <h1>
+                Loading...
+              </h1>
+            </div>
           </div>
         </template>
       </Suspense>
